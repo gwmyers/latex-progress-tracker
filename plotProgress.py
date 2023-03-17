@@ -17,9 +17,6 @@ df = df.set_index('timestamp_fixed')
 current_pagecount = df["pagecount"].iloc[-1]
 current_wordcount = df["wordcount"].iloc[-1]
 
-print("current_pagecount {}".format(current_pagecount))
-print("current_wordcount {}".format(current_wordcount))
-
 wc_color="orangered"
 pc_color="royalblue"
 
@@ -74,6 +71,7 @@ def make_pages_plot(axis):
     df.plot(y='pagecount',legend=None, color=pc_color, ax=axis,label="Raw Data")
     done_resample_df =  df.resample('w').max()
     done_resample_df['pagecount'].plot(figsize=(12,8), color='salmon',label="Rolling 7-day Max", ax=axis)
+    print("done_resample_df: {} with values: {}".format(done_resample_df, done_resample_df["pagecount"].values))
     slope = pd.Series(np.gradient(done_resample_df["pagecount"].values), done_resample_df.index, name='slope')
     plt.sca(axis)
     plt.plot(done_resample_df['pagecount'].diff(), color="forestgreen",label="Rolling 7-Day Change")
