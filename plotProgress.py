@@ -17,6 +17,9 @@ df = df.set_index('timestamp_fixed')
 current_pagecount = df["pagecount"].iloc[-1]
 current_wordcount = df["wordcount"].iloc[-1]
 
+print("current_pagecount {}".format(current_pagecount))
+print("current_wordcount {}".format(current_wordcount))
+
 wc_color="orangered"
 pc_color="royalblue"
 
