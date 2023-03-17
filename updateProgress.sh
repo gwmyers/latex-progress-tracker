@@ -9,6 +9,8 @@ TEX_DOC='/home/runner/work/phd-thesis/phd-thesis/main.tex'
 DOCUMENT='/home/runner/work/phd-thesis/main.pdf'
 DIR='/home/runner/work/phd-thesis/phd-thesis/'
 
+PROGRESSFILE='progress.csv'
+
 # Setup CSV if it doesn't exist
 if [ ! -f ${PROGRESSFILE} ]; then
     echo "timestamp,wordcount,pagecount" >> ${PROGRESSFILE}
