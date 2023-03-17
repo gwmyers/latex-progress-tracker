@@ -17,9 +17,9 @@ fi
 
 WORDCOUNT=`texcount -sum -total -merge {$TEX_DOC} | grep "Sum count:" | tr -d "Sum count: "`
 # Use this line in OSX
-PAGECOUNT=`mdls -name kMDItemNumberOfPages -raw ${DOCUMENT}`
+# PAGECOUNT=`mdls -name kMDItemNumberOfPages -raw ${DOCUMENT}`
 # Use this line in Linux
-# PAGECOUNT=`pdfinfo ${DOCUMENT} | grep Pages | sed 's/[^0-9]*//'`
+PAGECOUNT=`pdfinfo ${DOCUMENT} | grep Pages | sed 's/[^0-9]*//'`
 
 echo `date '+%Y-%m-%d %H:%M:%S'`,$WORDCOUNT,$PAGECOUNT >> $PROGRESSFILE
 echo "Done! Page count ${PAGECOUNT}, word count ${WORDCOUNT}. Written to ${PROGRESSFILE}"
