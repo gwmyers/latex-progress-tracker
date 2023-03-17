@@ -16,12 +16,13 @@ if [ ! -f ${PROGRESSFILE} ]; then
     echo "timestamp,wordcount,pagecount" >> ${PROGRESSFILE}
 fi
 
+
 WORDCOUNT=`texcount -sum -total -inc ${TEX_DOC}  -dir ${DIR} | grep "Sum count:" | tr -d "Sum count::"`
 PAGECOUNT=`pdfinfo ${DOCUMENT} | grep Pages | tr -d "Pages: "`
 
 echo `date '+%Y-%m-%d %H:%M:%S'`,$WORDCOUNT,$PAGECOUNT >> $PROGRESSFILE
 echo "Done! Page count ${PAGECOUNT}, word count ${WORDCOUNT}. Written to ${PROGRESSFILE}"
 
-cat ${PROGRESSFILE}
+cat progress.csv
 
 python plotProgress.py ${PROGRESSFILE}
