@@ -5,9 +5,9 @@
 # export PATH=/usr/local/bin:/Library/TeX/texbin/:$PATH
 
 echo "Updating progress"
-TEX_DOC='/home/runner/work/phd-thesis/phd-thesis/main.tex'
-DOCUMENT='/home/runner/work/phd-thesis/main.pdf'
-DIR='/home/runner/work/phd-thesis/phd-thesis/'
+TEX_DOC='/home/runner/work/CookBook/CookBook/main.tex'
+DOCUMENT='/home/runner/work/CookBook/main.pdf'
+DIR='/home/runner/work/CookBook/CookBook/'
 
 PROGRESSFILE='progress.csv'
 
