@@ -36,8 +36,8 @@ ax.set_xlabel('Date',fontsize=16)
 ax.set_ylim(ymin=0)
 ax2.set_ylim(ymin=0)
 
-plt.annotate("{:,d} Pages".format(current_pagecount), xy=(.05,.88), xycoords="axes fraction",color=pc_color, fontsize=14)
-plt.annotate("{:,d} Words".format(current_wordcount), xy=(.05,.8), xycoords="axes fraction",color=wc_color, fontsize=14)
+plt.annotate("{:,f} Pages".format(current_pagecount), xy=(.05,.88), xycoords="axes fraction",color=pc_color, fontsize=14)
+plt.annotate("{:,f} Words".format(current_wordcount), xy=(.05,.8), xycoords="axes fraction",color=wc_color, fontsize=14)
 
 #ax.xaxis.set_major_locator(months) Uncomment if you want month-level updates
 ax.xaxis.set_minor_locator(days)
@@ -86,7 +86,7 @@ def make_words_plot(axis):
     plt.sca(axis)
     plt.plot(done_resample_df['wordcount'].diff(), color="forestgreen",label="Rolling 7-Day Change")
     plt.ylabel("Words",fontsize=14)
-    plt.annotate("{:,d} Words".format(current_wordcount), xy=(.05,.88), xycoords="axes fraction", fontsize=16)
+    plt.annotate("{:,f} Words".format(current_wordcount), xy=(.05,.88), xycoords="axes fraction", fontsize=16)
 
 def make_format():
     sns.despine()
